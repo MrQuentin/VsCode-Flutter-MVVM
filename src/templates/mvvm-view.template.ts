@@ -15,7 +15,11 @@ function getReactiveMvvmViewTemplate(name: string): string {
 		@override
 		Widget build(BuildContext context) {
 			return ViewModelBuilder<${pascalCaseName}ViewModel>.reactive(
-			builder: (context, model, child) => Scaffold(),
+			builder: (context, model, child) => Scaffold(
+				body: Center(
+					child: Text("${pascalCaseName}"),
+				),
+			),
 			viewModelBuilder: () => ${pascalCaseName}ViewModel(),
 			);
 		}
@@ -33,7 +37,11 @@ function getNonReactiveMvvmViewTemplate(name: string): string {
 		@override
 		Widget build(BuildContext context) {
 			return ViewModelBuilder<${pascalCaseName}ViewModel>.nonReactive(
-			builder: (context, model, child) => Scaffold(),
+			builder: (context, model, child) => Scaffold(
+				body: Center(
+					child: Text("${pascalCaseName}"),
+				),
+			),
 			viewModelBuilder: () => ${pascalCaseName}ViewModel(),
 			);
 		}
